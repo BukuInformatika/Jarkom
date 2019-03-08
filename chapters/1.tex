@@ -83,8 +83,84 @@ Kelebihan Server Based
 \subsection {Topologi Jaringan Komputer}
     Topologi jaringan komputer adalah jaringan yang berhubungan dengan susuanan fisik semua jaringan komputer, baik server maupun client yang menentukan design,susunan,bentuk dari cara penempatan komputer(peripheral) kedalam jaringan-jaringan komputer.Topologi akan membentuk:
 \begin{enumerate}
-  \item Jenis alat yang di gunakan 
+  \item Jenis alat yang di gunakan
   \item kemampuan dari peralatan
   \item Pertembuhan dari jaringan komputer
   \item Bagaimana jaringan tersebut diatur
-\end{enumerate} 
+\end{enumerate}
+
+jenis alat-alat yang di gunakan,syaratnya:
+\begin{itemize}
+  \item Minimal 2 PC
+  \item Adanya Operating System
+  \item Adanya Network Interface Card(NIC)
+  \item Driver NIC
+  \item Media Transmisi
+  \item Konsetrator(penghubung
+  \item Access Point(tanpa kabel)
+  \item Hub
+  \item switch
+  \item Repeater(Penguat signal)
+  \item Router (Pembeda IP Address)
+  \item Gatway(Perbedaan Arsitektur)
+  \item Bridge (penghubung perbedaan topologi)
+  \item Modern (modulasi de Modelator)
+\end{itemize}
+
+Topologi jaringan dibagi menjadi dua macam yaitu:
+\begin{enumerate}
+  \item Fisika
+        Topologi ini menjelaskan tentang bentuk dari jaringan komputer yang dapat dilihat secara fisik/nyara.
+\end{enumerate}
+
+\begin{enumerate}
+  \item Topologi Bus
+        Masing-masing server dan workstastion di hubungkan pada sebuah kabel yang di sebut trunk atau backbone, kabel untuk menghubungkan jaringan ini biasanya menggunakan kabel Coaxial (kabel BNC). setiap server dan workstation yang di sambungkan pada bus menggunakan konektor T.
+\end{enumerate}
+ pada kedua ujung dari kabel harus diberi terminator berupa resistor yang memiliki resistansi khusus sebesar 50 Ohm yang berwujud sebuah konektor.Apabila resistansi kabel dibawah maupun di atas 50 Ohm,maka server tidak akan bisa bekerja secara maksimal dalam melayani jaringan,sehingga akses user dan client menjadi menurun.
+ kelebihan jaringan topologi bus:
+ \begin{itemize}
+   \item Penggunaan kabel yang sedikit sehingga terlihat sederhana.
+   \item Pengembangan jaringan mudah.
+ \end{itemize}
+ Kekurangan jaringan topologi
+ \begin{itemize}
+   \item Membutuhkan repeater untuk jarak jaringan yang terlalu jauh.
+   \item jaringan akan terganggu apabila salah satu komputer mengalami kerusakan.
+   \item Deteksi kesalahan sangat kecil sehingga apabila terjadi gangguan maka sulit sekali mencari kesalahan tersebut.
+   \item Terjadi antrian data
+ \end{itemize}
+
+\begin{enumerate}
+  \item Topologi Star
+        Pada topologi in, setiap komputer(node) dalam jaringan terhubung ke sebuah pusat jaringan,yang biasa berupa hub,switch, dan juga berupa komputer. setiap workstasion dihubungkan ke server menggunakan suatu konsentrator. masing-masing workstastion tidak saling berhubungan.jadi setiap user yang terhubung ke server tidak akan dapat berinteraksi dan melakukan apa-apa sebelum server kita di hidupkan.apabila komputer server mati maka semua koneksi jaringan akan terputus.
+\end{enumerate}
+kelebihan jaringan topologi star:
+\begin{itemize}
+  \item Mudah dalam medeteksi kesalahan jaringan karena control jaringan terpusat.
+  \item fleksibe dalam hal pemasangan jaringan baru tanpa mempengaruhi jaringan yang lain.
+  \item apabila salah satu kabel koneksi user terpusat maka hanya user yang bersangkutan saja yang tidak akan berfungsi dan tidak mempengaruhi user yang lain.
+\end{itemize}
+kekurangan jaringan topologi star:
+\begin{itemize}
+  \item Boros dalam pemakaian kabel jika kita hubungkan dengan jaringan yang lebih besar dan luas.
+  \item Control hanya terpusat pada hub/switch sehingga operasionalnya perlu ditangani secara khusus.
+\end{itemize}
+
+\begin{enumerate}
+  \item topologi cincin atau yang sering disebut dengan ring topologi adalah topologi jaringan di mana setiap komputer yang terhubung membuat lingkaran. dengan artian setiap komputer yang terhubung kedalam satu jaringan saling terkoneksi ke dua komputer lainnya sehingga membentuk satu jaringan yang sama dengan bentuk cincin.
+      Pada setiap komputer akan dihubungkan dan di jadikan repeater(penguat signal). komputer yang diberi frame berhak mengirim data dan komputer yang lain menjadi repeater. pada topologi ring terdapat token frame yang saling berkesinambungan dan pada prinsipnya menggunakan CSMA/CD(Carrier Sense Multyple Access/Collection Detection).
+\end{enumerate}
+Kelebihan jaringan topologi ring adalah:
+\begin{itemize}
+  \item Hemat kabel
+  \item Dapat mengisolasi kesalahan dari suatu workstation kekurangan jaringan topolgi ring
+  \item Sangat peka terhadap kesalahan jaringan walaupun sekecil apapun.
+  \item Sukar untuk mengembangkan jaringan,sehingga jaringan tersebut tampak menjadi kaku.
+  \item Biaya pemasangan Lebih besar.
+\end{itemize}
+
+\begin{enumerate}
+  \item Logik
+        sedanhkan topologi ini menjelaskan tentang bagaimana signal akan melewati komputer didalam jaringan. Arsitektur ini terus di kembangkan sampai saat ini.
+\end{enumerate}
