@@ -24,14 +24,14 @@ Type Jaringan Komputer
  \begin{enumerate}
    \item Disesuaikan dengan kebutuhan kita dalam membuat jaringan komputer.
    \item Tergantung kepada jumlah pengguna yang akan melakukan sharing data.
-   \item keamanan (securitas) dari masing-masing jaringan.
+   \item keamanan (security) dari masing-masing jaringan.
    \item Mempertimbangkan dalam biaya pengadaan dari jaringan komputer
    \item Sumber daya admin menentukan jaringan komputer.
    \item Bentuk dari organisasi yang terbentuk.
  \end{enumerate}
 
 Server Based
-pada type jaringan komputer server based di perlukan satu atau lebih komputer khusus yang di sebut server untuk mengatur lalu lintas data atau informasi dalam jaringan komputer.komputer-komputer selain server dinamakan client. server yaitu komputer yang menyediakan fasilitas bagi komputer-komputer lain, sedangkan client yaitu komputer-komputer yang menerima atau menggunakan fasilitas yang di sediakan oleh server \cite{yudianto2007jaringan}.
+pada type jaringan komputer server based di perlukan satu atau lebih komputer khusus yang di sebut server untuk mengatur lalu lintas data atau informasi dalam jaringan komputer.komputer-komputer selain server dinamakan client. server yaitu komputer yang menyediakan fasilitas bagi komputer-komputer lain, sedangkan client yaitu komputer-komputer yang menerima atau menggunakan fasilitas yang di sediakan oleh server.
 
 server dibedakan atas dua macam yaitu dedicated server(server bisa jadi client) dan undedicated server(server mutlak,tidak bisa jadi client).
 
@@ -234,4 +234,27 @@ Adapun topologi fisik yang umum di gunakan dalam membangun sebuah jaringan adala
         walaupun demikian, data yang ada tetap bergerak satu arah dalam satu saat. pertama, pesan ada akan di sampaikan dari titik ke titik lainnya dalam satu arah. apabila di temui kegagalan, misalnya terdapat kerusakan pada peralatan yang ada, maka data yang akan di kirim dengan cara kedua, yaitu pesan kemudian di transmisi dalam arah yang berlawanan, dan pada akhirnya bisa berakhir pada tempat yang di tuju.
   \item tree Network (jaringan pohon)
         pada jaringan pohon, terdapat beberapa tingkatan simpul (node).pusat atau simpul yang lebih tinggi tingkatanya, dapat mengatur simpul lain yang lebih rendah tingkatanya.
-\end{itemize} 
+\end{itemize}
+
+topologi logik pada umumnya terbagi menjadi dua tipe,yaitu:
+\begin{enumerate}
+  \item Topologi Broadcast
+        secara sederhana dapat di gambarkan yaitu suatu host yang mengirimkan data kepada seluruh host lain pada media jaringan.
+  \item Topologi token passing
+        mengatur pengiriman data pada host melalui media dengan menggunakan token yang secara teratur berputar pada seluruh host. host hanya dapat mengirimkan data hanya jika host tersebut memiliki token. dengan token ini, collision dapat di cegah.
+\end{enumerate}
+
+\subsection{Bentuk komunikasi data}
+\begin{itemize}
+  \item Simpleks line (komunikasi satu arah)
+        Merupakan bentuk saluran komunikasi yang paling murah, di mana komunikasi jenis ini hanya bisa berlangsung satu arah, dengan demikian pengirim informasi tidak bisa bertindak ataupun berubah menjadi penerima informasi, demikian pula sebaliknya.
+
+        walaupun murah, jenis ini simpleks line jarang dipergunakan untuk komunikasi data,kalapun terpaksa hanya dipergunakan untuk hubungan antara CPU dengen printer, di mana printer hanya akan bertindak sebagai penerima informasi dari CPU. dalam kehidupan sehari-hari, kita bisa melihat radio panggil (pager) yang menggunakan transmisi-line dengan bentuk simpleks
+  \item half-Dupleks(dua Arah bergantian).
+        hal-dupleks line menginjika transmisi data dilakukan dalam dua arah, tetepi tidak dalam waktu yang bersamaan. jika line yang ada sedang mengirim data, misalnya dari terminal ke CPU, maka line yang bersangkutan pada saat itu tidak bisa di gunakan untuk mengirim data kembali dari CPU keterminal.
+
+        dalam kehidupan sehari-hari, kita bisa melihat radio-CB yang di gunakan oleh para satpam ataupun anggota kepolisian. Radio-CB yang mereka pergunakan, menggunakan bentuk saluran half-dupleks sehingga pada saat pembicaraan berlangsung, sang pembicaraan harus menekan tombol tertentu agar suara yang di kirimkan bisa di salurkan kepada penerima. apabila di rasa cukup, maka pembicara akan mengucapkan kata "ganti"
+        sebagai tanda bahwa saluran tersebut bisa di gunakan oleh lawan berbicaranya.
+  \item Full-Dupleks (dua arah penuh)
+        di dalam komunikasi ini, penerima dan pengirim informasi bisa secara serentak melakukan kegiatan bersama-sama, ataupun saling bertukar posisi dari penerima menjadi pengirim berita dan sebaliknya. data dalam hal ini dapat di kirim dari dua arah pada saat yang bersamaan
+\end{itemize}
