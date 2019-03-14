@@ -319,5 +319,24 @@ hal-hal yang harus di perhatikan dalam protokol adalah sebagai berikut:
          dalam pengiriman data tak lepas dari kesalahan,baik itu dalam proses pengiriman maupun pada waktu data itu di terima.fungsi dari error control adalah mengontrol terjadinya kesalahan yang terjadi pada waktu data dikirimkan.
    \item Transmission Service
          fungsi dari transmission service adalah memberi pelayanan komunikasi data khususnya yang berkaitan dengan prioritas dan keamanan serta perlindungan data.
- \end{itemize} 
- 
+ \end{itemize}
+
+\subsection{TCP/IP}
+3.TCP/IP bukanlah sebuah protokol tunggal tetapi satu kesehatan protokol dan utility.setiap protokol dalam kesatuan ini memiliki aturan yang spesifik. protokol ini dikembangkan oleh ARPA(Advanced Research Project Agency) untuk departement pertahanan Amerika serikat pada tahun 1969.
+ARPA menginginkan sebuah protokol yang memiliki karakter sebagai berikut:
+\begin{itemize}
+  \item Mampu menghubungkan berbagai jenis sistem operasi.
+  \item Dapat diandalkan dan mampu mendukung komunikasi kecepatan tinggi
+  \item Routable dan scalable untuk memenuhi jaringan yang kompleks dan luas.Sebuah alamat TCP/IP adalah nilai biner berukuran 32 Bit yang di berikan kesetiap host dalam sebuah jaringan. Nilai ini di gunakan untuk mengenali jaringan di mana host yang terhubung jadi satu pada sebuah internet work harus memiliki satu alamat unik TCP/IP.
+\end{itemize}
+
+Setiap alamat terbagi atas dua komponen:
+\begin{itemize}
+  \item Network ID
+        ini adalah bagian dari alamat IP yang mewakili jaringan fisik dari host (nama jalan dari rumah). Setiap komputer dalam segmen jaringan tertentu akan memiliki ID jaringan yang sama.
+  \item Node ID
+        ini adalah bagian yang mewakili bagian individu dari alamat(nomor rumah). Bila komputer disegment jaringan memiliki alamat, maka jaringan tersebut perlu miliki siapakah suatu paket itu.
+        seperti yang di sebutkan di atas tadi bahwa nilai IP adalah nilai biner 32 bit. Nilai tersebut terbagi menjadi empat bagian 8 bit yang di sebut oktet. contoh alamat IP:202.149.240.66 dengan mengunakan contoh di atas, katakanlah administrator mensetup jaringan dengan semua komputer memiliki bagian nilai yang sama 202.149.240.xxx.konidisi ini yang di sebut network ID. Nomor pada XXX adalah node ID-nya.
+        setiap alamat TCP/IP jatuh pada satu kelas alamat. kelas mewakili sebuah grup alamat yang segera dapat di kenal komponen software sebagai bagian dari sebuah jaringan fisik.
+        misalkan, ambil contoh alamat TCP/IP berikut dan nilai binernya. 10.149.240.660001010.10010101.1111000.10000010 dengan memperhatikan tiga nilai biner yang pertama, bisa di katakan bahwa alamat ini termasuk class A.
+\end{itemize}
