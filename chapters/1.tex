@@ -300,6 +300,24 @@ hal-hal yang harus di perhatikan dalam protokol adalah sebagai berikut:
         merupakan format data dan cara pengkodean yang di gunakan untuk mengkodekan sinyal.
   \item semantix
         Di gunakan untuk mengetahui maksud dari informasi yang di kirim dan mengkoreksi kesalahan yang terjadi dari informasi tadi.
-  \item Timing 
+  \item Timing
         di gunakan untuk mengetahui kecepatan transmisi data.
 \end{itemize}
+
+\subsection{Fungsi protokol}
+ 2.fungsi-fungsi protokol secara detail dapat di jelaskan sebagai berikut:
+ \begin{itemize}
+   \item Fragmentasi dan Reassembly
+         fungsi dari fragmentasi dan reassembly adalah membagi informasi yang di kirim menjadi beberapa paket data pada saat isi pengirim mengirimkan informasi tadi dan setelah di terima maka sisi penerima akan menggabungkan lagi menjadi paket berita yang lengkap.
+   \item Encaptulation
+         fungsi dan ecaptulation adalah melengkapi berita yang di kirimkan dengan address, kode-kode koreksi dan lain-lain.
+   \item Connection Control
+         fungsi dari connection control adalah membangun hubungan komunikasi dari transmitter dan receiver, di mana dalam membangun hubungan ini termasuk dalam hal pengiriman data dan mengakhiri hubungan.
+   \item Flow control
+         fungsi dari flow control adalah mengatur perjalanan data transmitter ke receiver
+   \item Error Control
+         dalam pengiriman data tak lepas dari kesalahan,baik itu dalam proses pengiriman maupun pada waktu data itu di terima.fungsi dari error control adalah mengontrol terjadinya kesalahan yang terjadi pada waktu data dikirimkan.
+   \item Transmission Service
+         fungsi dari transmission service adalah memberi pelayanan komunikasi data khususnya yang berkaitan dengan prioritas dan keamanan serta perlindungan data.
+ \end{itemize} 
+ 
