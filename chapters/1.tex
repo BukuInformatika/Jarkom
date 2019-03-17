@@ -24,14 +24,14 @@ Type Jaringan Komputer
  \begin{enumerate}
    \item Disesuaikan dengan kebutuhan kita dalam membuat jaringan komputer.
    \item Tergantung kepada jumlah pengguna yang akan melakukan sharing data.
-   \item keamanan (securitas) dari masing-masing jaringan.
+   \item keamanan (security) dari masing-masing jaringan.
    \item Mempertimbangkan dalam biaya pengadaan dari jaringan komputer
    \item Sumber daya admin menentukan jaringan komputer.
    \item Bentuk dari organisasi yang terbentuk.
  \end{enumerate}
 
 Server Based
-pada type jaringan komputer server based di perlukan satu atau lebih komputer khusus yang di sebut server untuk mengatur lalu lintas data atau informasi dalam jaringan komputer.komputer-komputer selain server dinamakan client. server yaitu komputer yang menyediakan fasilitas bagi komputer-komputer lain, sedangkan client yaitu komputer-komputer yang menerima atau menggunakan fasilitas yang di sediakan oleh server \cite{yudianto2007jaringan}.
+pada type jaringan komputer server based di perlukan satu atau lebih komputer khusus yang di sebut server untuk mengatur lalu lintas data atau informasi dalam jaringan komputer.komputer-komputer selain server dinamakan client. server yaitu komputer yang menyediakan fasilitas bagi komputer-komputer lain, sedangkan client yaitu komputer-komputer yang menerima atau menggunakan fasilitas yang di sediakan oleh server.
 
 server dibedakan atas dua macam yaitu dedicated server(server bisa jadi client) dan undedicated server(server mutlak,tidak bisa jadi client).
 
@@ -234,4 +234,109 @@ Adapun topologi fisik yang umum di gunakan dalam membangun sebuah jaringan adala
         walaupun demikian, data yang ada tetap bergerak satu arah dalam satu saat. pertama, pesan ada akan di sampaikan dari titik ke titik lainnya dalam satu arah. apabila di temui kegagalan, misalnya terdapat kerusakan pada peralatan yang ada, maka data yang akan di kirim dengan cara kedua, yaitu pesan kemudian di transmisi dalam arah yang berlawanan, dan pada akhirnya bisa berakhir pada tempat yang di tuju.
   \item tree Network (jaringan pohon)
         pada jaringan pohon, terdapat beberapa tingkatan simpul (node).pusat atau simpul yang lebih tinggi tingkatanya, dapat mengatur simpul lain yang lebih rendah tingkatanya.
-\end{itemize} 
+\end{itemize}
+
+topologi logik pada umumnya terbagi menjadi dua tipe,yaitu:
+\begin{enumerate}
+  \item Topologi Broadcast
+        secara sederhana dapat di gambarkan yaitu suatu host yang mengirimkan data kepada seluruh host lain pada media jaringan.
+  \item Topologi token passing
+        mengatur pengiriman data pada host melalui media dengan menggunakan token yang secara teratur berputar pada seluruh host. host hanya dapat mengirimkan data hanya jika host tersebut memiliki token. dengan token ini, collision dapat di cegah.
+\end{enumerate}
+
+\subsection{Bentuk komunikasi data}
+\begin{itemize}
+  \item Simpleks line (komunikasi satu arah)
+        Merupakan bentuk saluran komunikasi yang paling murah, di mana komunikasi jenis ini hanya bisa berlangsung satu arah, dengan demikian pengirim informasi tidak bisa bertindak ataupun berubah menjadi penerima informasi, demikian pula sebaliknya.
+
+        walaupun murah, jenis ini simpleks line jarang dipergunakan untuk komunikasi data,kalapun terpaksa hanya dipergunakan untuk hubungan antara CPU dengen printer, di mana printer hanya akan bertindak sebagai penerima informasi dari CPU. dalam kehidupan sehari-hari, kita bisa melihat radio panggil (pager) yang menggunakan transmisi-line dengan bentuk simpleks
+  \item half-Dupleks(dua Arah bergantian).
+        hal-dupleks line menginjika transmisi data dilakukan dalam dua arah, tetepi tidak dalam waktu yang bersamaan. jika line yang ada sedang mengirim data, misalnya dari terminal ke CPU, maka line yang bersangkutan pada saat itu tidak bisa di gunakan untuk mengirim data kembali dari CPU keterminal.
+
+        dalam kehidupan sehari-hari, kita bisa melihat radio-CB yang di gunakan oleh para satpam ataupun anggota kepolisian. Radio-CB yang mereka pergunakan, menggunakan bentuk saluran half-dupleks sehingga pada saat pembicaraan berlangsung, sang pembicaraan harus menekan tombol tertentu agar suara yang di kirimkan bisa di salurkan kepada penerima. apabila di rasa cukup, maka pembicara akan mengucapkan kata "ganti"
+        sebagai tanda bahwa saluran tersebut bisa di gunakan oleh lawan berbicaranya.
+  \item Full-Dupleks (dua arah penuh)
+        di dalam komunikasi ini, penerima dan pengirim informasi bisa secara serentak melakukan kegiatan bersama-sama, ataupun saling bertukar posisi dari penerima menjadi pengirim berita dan sebaliknya. data dalam hal ini dapat di kirim dari dua arah pada saat yang bersamaan
+\end{itemize}
+
+\subsection{Media Transmisi Data}
+\begin{itemize}
+  \item kabel Twisted Pair/uritan.
+        Kabel jenis ini merupakan kabel yang paling luas penggunaanya karena di pergunakan untuk jaringan telpon.
+        kabel ini terbuat dari tembaga di mana beberapa pasang kabel di-untir dan di jadikan satu. Guna mempertinggi kualitas kabel, seringkali setiap pasang kabel akan saling di-untir sehingga disebut sebagai untir-an.
+  \item kabel koaksial
+        pada jenis ini,kabel utama yang terbuat dari tembaga akan di keliling oleh anyaman halus kabel tembaga lainnya dan di antaranya terdapat isolasi. dari sudut harga, kabel ini lebih mahal apabila dibandingkan dengan kabel untiran,tetepi kualitas yang di berikan juga lebih baik.
+  \item Fiber Optic(serat optik)
+        dewasa ini terdapat usaha untuk menggunakan cahaya sebagai media komunikasi. data yang ada akan di bawa oleh cahaya, dan untuk menyalurkan cahaya yang membawa data tersebut, di perlukan adanya suatu jenis kabel yang khusus, dan kabel inilah yang di sebut sebagai fiber optic cable ataupun serat fiber. fiber optic terdiri atas suatu gelas fiber yang sangat tipis dan dapat di pergunakan untuk menyalurkan data dalam jumlah dan kecepatan yang sangat tinggi.
+  \item Gelombang Radio-AM
+        Sinyal yang berbentuk analog, juga dapat di transmisikan melalui udara, seperti misalnya: gelombang radio. AM-Radio
+        yang merupakan singkatan dari Amplitude Modulation, dapat menangkap sinyal pada frekwensi yang sama, dan dengan kekuatan dan amplitude yang di miliknya, dapatlah menggerakan informasi ke arah yang di tuju.
+  \item Pemancar Radio-FM/Station Televisi.
+        Pemancar radio-FM dan station televisi juga dapat di gunakan untuk menyalurkan gelombang analog. dalam hal ini, Station televisi ataupun pemancar radio-FM (frekwensi Modulation)
+        akan mendiami gelombang antara 54 hingga 806 megahertz(milions of cycles per second)
+  \item Radio komunikasi Gelombang Pendek.
+        dalam hal ini, radio komunikasi gelombang pendek banyak di gunakan oleh kalangan tertentu, misalnya ORARI ataupun kepolisian, juga dapat di manfaatkan untuk membawa sinyal analog ketempat yang di tiju. Radio komunikasi gelombang pendek memliki frekwensi yang lebih tinggi jika di banding
+        dengan frekwensi yang di miliki oleh pemancar radio-AM
+  \item telephone Celluar
+        Telpon celuler ataupun genggam, ataupun telfon mobil yang bekerja pada frekwensi 825 hingga 890 megahertz, juga dapat di maanfaatkan sebagai suatu media transmsi komunikasi data.
+  \item Gelombang Mikro
+        Komunikasi data melalui gelombang elektro magnet (udara)
+        yang paling banyak di gunakan adalah dengan gelombang mikro atau microwave. cara ini bisa menjangkau jarak yang sangat jauh, sehingga banyak kalangan industri ataupun pribadi yang menggunakannya untuk memindahkan/menyalurkan suara, video ataupun data komunikasi
+  \item Satelit
+        Pengguna satelit dirancang untuk mengurangi biaya pada pengiriman jarak yang sangat jauh. apabila di gunakan gelombang mikro, maka di perlukan banyak sekali station pemancar bumi yang harus di bangun. di samping itu juga
+        harus diingat adanya lautan yang memisahkan daratan satu
+        dengan lainnya. dengan menggunakan satelit, maka permasalahan yang ada bisa di atasi. Satelit secara umum
+        bekerja pada frekwensi antara dua hingga 40 gigahertz
+        (billion of hertz)
+  \end{itemize}
+
+\subsection{Protokol}
+1. pengertian dasar Protokol
+    protokol adalah sebuah aturan yang mendefinisikan beberapa fungsi yang ada dalam sebuah jaringan komputer, misalnya mengirim pesan,data, informasi dan fungsi lain yang harus di penuhi oleh sisi pengirim (transmitter) dan sisi penerima (receiver) agar komunikasi berlangsung dengan benar. selain itu protokol juga berfungsi untuk memungkinkan dua atau lebih komputer dapat berkomunikasi dengan bahasa yang sama.
+
+hal-hal yang harus di perhatikan dalam protokol adalah sebagai berikut:
+\begin{itemize}
+  \item Syntax
+        merupakan format data dan cara pengkodean yang di gunakan untuk mengkodekan sinyal.
+  \item semantix
+        Di gunakan untuk mengetahui maksud dari informasi yang di kirim dan mengkoreksi kesalahan yang terjadi dari informasi tadi.
+  \item Timing
+        di gunakan untuk mengetahui kecepatan transmisi data.
+\end{itemize}
+
+\subsection{Fungsi protokol}
+ 2.fungsi-fungsi protokol secara detail dapat di jelaskan sebagai berikut:
+ \begin{itemize}
+   \item Fragmentasi dan Reassembly
+         fungsi dari fragmentasi dan reassembly adalah membagi informasi yang di kirim menjadi beberapa paket data pada saat isi pengirim mengirimkan informasi tadi dan setelah di terima maka sisi penerima akan menggabungkan lagi menjadi paket berita yang lengkap.
+   \item Encaptulation
+         fungsi dan ecaptulation adalah melengkapi berita yang di kirimkan dengan address, kode-kode koreksi dan lain-lain.
+   \item Connection Control
+         fungsi dari connection control adalah membangun hubungan komunikasi dari transmitter dan receiver, di mana dalam membangun hubungan ini termasuk dalam hal pengiriman data dan mengakhiri hubungan.
+   \item Flow control
+         fungsi dari flow control adalah mengatur perjalanan data transmitter ke receiver
+   \item Error Control
+         dalam pengiriman data tak lepas dari kesalahan,baik itu dalam proses pengiriman maupun pada waktu data itu di terima.fungsi dari error control adalah mengontrol terjadinya kesalahan yang terjadi pada waktu data dikirimkan.
+   \item Transmission Service
+         fungsi dari transmission service adalah memberi pelayanan komunikasi data khususnya yang berkaitan dengan prioritas dan keamanan serta perlindungan data.
+ \end{itemize}
+
+\subsection{TCP/IP}
+3.TCP/IP bukanlah sebuah protokol tunggal tetapi satu kesehatan protokol dan utility.setiap protokol dalam kesatuan ini memiliki aturan yang spesifik. protokol ini dikembangkan oleh ARPA(Advanced Research Project Agency) untuk departement pertahanan Amerika serikat pada tahun 1969.
+ARPA menginginkan sebuah protokol yang memiliki karakter sebagai berikut:
+\begin{itemize}
+  \item Mampu menghubungkan berbagai jenis sistem operasi.
+  \item Dapat diandalkan dan mampu mendukung komunikasi kecepatan tinggi
+  \item Routable dan scalable untuk memenuhi jaringan yang kompleks dan luas.Sebuah alamat TCP/IP adalah nilai biner berukuran 32 Bit yang di berikan kesetiap host dalam sebuah jaringan. Nilai ini di gunakan untuk mengenali jaringan di mana host yang terhubung jadi satu pada sebuah internet work harus memiliki satu alamat unik TCP/IP.
+\end{itemize}
+
+Setiap alamat terbagi atas dua komponen:
+\begin{itemize}
+  \item Network ID
+        ini adalah bagian dari alamat IP yang mewakili jaringan fisik dari host (nama jalan dari rumah). Setiap komputer dalam segmen jaringan tertentu akan memiliki ID jaringan yang sama.
+  \item Node ID
+        ini adalah bagian yang mewakili bagian individu dari alamat(nomor rumah). Bila komputer disegment jaringan memiliki alamat, maka jaringan tersebut perlu miliki siapakah suatu paket itu.
+        seperti yang di sebutkan di atas tadi bahwa nilai IP adalah nilai biner 32 bit. Nilai tersebut terbagi menjadi empat bagian 8 bit yang di sebut oktet. contoh alamat IP:202.149.240.66 dengan mengunakan contoh di atas, katakanlah administrator mensetup jaringan dengan semua komputer memiliki bagian nilai yang sama 202.149.240.xxx.konidisi ini yang di sebut network ID. Nomor pada XXX adalah node ID-nya.
+        setiap alamat TCP/IP jatuh pada satu kelas alamat. kelas mewakili sebuah grup alamat yang segera dapat di kenal komponen software sebagai bagian dari sebuah jaringan fisik.
+        misalkan, ambil contoh alamat TCP/IP berikut dan nilai binernya. 10.149.240.660001010.10010101.1111000.10000010 dengan memperhatikan tiga nilai biner yang pertama, bisa di katakan bahwa alamat ini termasuk class A.
+\end{itemize}
