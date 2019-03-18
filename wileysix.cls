@@ -402,7 +402,7 @@ This version is dated \currversion^^J^^J}
 \vss}\global\everypar={\hskip-\parindent\everypar={}}\vskip1in}
 
 % used
-%\introauthor{Rolly Maulana Awangga.}{D4 Teknik Informatika\\
+%\introauthor{f Maulana Awangga.}{D4 Teknik Informatika\\
 % Politeknik Pos Indonesia}
 
 \def\l@ichapter#1#2{%
@@ -1843,20 +1843,21 @@ D R A F T\hfill\today, \realtime\hfill D R A F T\global\titlefalse\vss}}
 \vskip6.5pt
 
 {\locfont Penulis:}\\
-Rolly Maulana Awangga
+Muhammad Yusril Helmi Setyawan
 \vskip6.5pt
 
 ISBN : 978-602-53897-0-2
 \vskip6.5pt
 
 {\locfont Editor:}\\
-M. Yusril Helmi Setyawan
+Rolly Maulana Awangga
 \vskip6.5pt
 
 {\locfont Penyunting:}\\
 Syafrial Fachrie Pane\\
-Khaera Tunnisa\\ 
-Diana Asri Wijayanti\\
+khalid ahmad khadafi\\ 
+Iqbal Syarif Awaludin\\
+
 \vskip6.5pt
 
 {\locfont Desain sampul dan Tata letak:}\\
