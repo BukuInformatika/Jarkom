@@ -340,3 +340,36 @@ Setiap alamat terbagi atas dua komponen:
         setiap alamat TCP/IP jatuh pada satu kelas alamat. kelas mewakili sebuah grup alamat yang segera dapat di kenal komponen software sebagai bagian dari sebuah jaringan fisik.
         misalkan, ambil contoh alamat TCP/IP berikut dan nilai binernya. 10.149.240.660001010.10010101.1111000.10000010 dengan memperhatikan tiga nilai biner yang pertama, bisa di katakan bahwa alamat ini termasuk class A.
 \end{itemize}
+
+\subsection{Konfigurasi Firewall}[IPtables]
+Dasar Teori
+firewall adalah sistem atau sekelompok sistem yang menetapkan kebijakan kendali akses antara dua jaringan. Secara prinsip, firewall dapat di anggap sebagai sepasang mekanisme : yang pertama memblok lalu lintas, yang kedua menginjikan lalu lintas jaringan, firewall dapat di gunakan untuk melindungi jaringan anda dari serangan jaringan oleh pihak luar, namun firewall tidak dapat melindungi dari serangan yang tidak melalui firewall dan serangan yang berada di dalam jaringan anda,serta firewall tidak dapat melindungi anda dari program-program aplikasi yang tertulis dengan buruk.
+
+secara umum, firewall biasanya menjalankan fungsi:
+\begin{itemize}
+  \item Analisis dan filter paket
+        Data yang berkomunikasi lewat protokol di internet, dibagi atas paket-paket. Firewall dapat menganalisis paket ini, kemudian mempermalukannya sesuai kondisi tertentu. misalnya, jika ada paket a maka akan di lakukan b. untuk filter paket, dapat di lakukan di linux tanpa program tambahan.
+  \item Bloking isi dan protokol
+        firewall dapat melakukan bloking terhadap isi paket, misalnyanya berisi applet jave,ActiveX, VBScript, Cookie.
+  \item Autentika Koneksi dan enkripsi
+        Firewall umumnya memiliki kemampuan untuk menjalankan enksipsi dalam autentikasi identitas user, integritas dari satu session, dan melapisi transfer data dari intipan pihak lain. enkripsi yang di makasud termasuk DES, tripple DES,SSl,IPSEC,SHA,MD5,BlowFish,IDEA dan sebagainya.
+\end{itemize}
+
+secara konseptual,terdapat dua macam firewall yaitu:
+\begin{itemize}
+  \item Network Level
+        Firewall network level mendasarkan keputusan mereka pada alamat sumber,alamat tujuan dan prot yang terdapat dalam setiap paket IP. Network level firewall sangat cepat dan sangat transparan bagi pemakai. Application level firewall biasanya adalah host yang berjalan sebagai proxy server, yang tidak mengijinkan lalu lintas antara jaringan, dan melakukan logging dan auditing lalu lintas yang melaluinya
+  \item Application level
+        Application level firewall menyediakan laporan audit yang lebih rinci dan cenderung lebih memaksakan model keamanan yang lebih konservatif daripada network level firewall. Firewall ini bisa di katakan sebagai jembatan. Application- Proxy firewall biasanya berupa program khusus, misalnya squid
+\end{itemize}
+
+Konfigurasi Firewall[TCP Wrapper]
+pada sistem operasi pada umumnya mempunyai program yang berjalan pada sistem operasi tersebut. pada sistem operasi linux,di kenal istilah service untuk mengantikan nama aplikasi secara global. Ada beberapa service yang di manage di linux:
+\begin{itemize}
+  \item System V scripts
+        merupakan metode yang paling umum digunakan untuk menaging service, biasanya membutuhkan file konfigurasi. service distart dengan scrpit di/etc/init.d/. misalnya untuk network: /etc/init.d/network restart atau service network restart
+  \item xinetd
+        hanya beberapa service yang ada pada xinetd, service ini tidak memerlukan start/stop terhadap service. dan file konfigurasi yang biasa di pakai adalah:
+        /etc/xinetd.conf -> Top level configuration file
+        /etc/xinetd.d/service -> service specifition configuration
+\end{itemize} 
