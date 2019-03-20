@@ -372,4 +372,11 @@ pada sistem operasi pada umumnya mempunyai program yang berjalan pada sistem ope
         hanya beberapa service yang ada pada xinetd, service ini tidak memerlukan start/stop terhadap service. dan file konfigurasi yang biasa di pakai adalah:
         /etc/xinetd.conf -> Top level configuration file
         /etc/xinetd.d/service -> service specifition configuration
-\end{itemize} 
+\end{itemize}
+
+Network Scanning dan Probing
+
+Dasar teori
+ Server tugasnya adalah melayani client dengan menyediakan service yang di butuhkan. Server menyadiakan service dengan bermacam-macam kemampuan, baik untuk lokal maupun remote. server listening pada suatu port dan menunggu incomming connection ke port. koneksi bisa berupa lokal maupun remote.
+    port sebernarnya suatu alamat pada stack jaringan kernel, sebagai cara di mana transport layer mengola koneksi dan melakukan pertukaran data antar komputer. port yang terbuka mempunyai resiko terkait dengan exploit. perlu dikelola port mana yang perlu di buka ini terbuka.
+ 
