@@ -340,3 +340,75 @@ Setiap alamat terbagi atas dua komponen:
         setiap alamat TCP/IP jatuh pada satu kelas alamat. kelas mewakili sebuah grup alamat yang segera dapat di kenal komponen software sebagai bagian dari sebuah jaringan fisik.
         misalkan, ambil contoh alamat TCP/IP berikut dan nilai binernya. 10.149.240.660001010.10010101.1111000.10000010 dengan memperhatikan tiga nilai biner yang pertama, bisa di katakan bahwa alamat ini termasuk class A.
 \end{itemize}
+
+\subsection{Konfigurasi Firewall}[IPtables]
+Dasar Teori
+firewall adalah sistem atau sekelompok sistem yang menetapkan kebijakan kendali akses antara dua jaringan. Secara prinsip, firewall dapat di anggap sebagai sepasang mekanisme : yang pertama memblok lalu lintas, yang kedua menginjikan lalu lintas jaringan, firewall dapat di gunakan untuk melindungi jaringan anda dari serangan jaringan oleh pihak luar, namun firewall tidak dapat melindungi dari serangan yang tidak melalui firewall dan serangan yang berada di dalam jaringan anda,serta firewall tidak dapat melindungi anda dari program-program aplikasi yang tertulis dengan buruk.
+
+secara umum, firewall biasanya menjalankan fungsi:
+\begin{itemize}
+  \item Analisis dan filter paket
+        Data yang berkomunikasi lewat protokol di internet, dibagi atas paket-paket. Firewall dapat menganalisis paket ini, kemudian mempermalukannya sesuai kondisi tertentu. misalnya, jika ada paket a maka akan di lakukan b. untuk filter paket, dapat di lakukan di linux tanpa program tambahan.
+  \item Bloking isi dan protokol
+        firewall dapat melakukan bloking terhadap isi paket, misalnyanya berisi applet jave,ActiveX, VBScript, Cookie.
+  \item Autentika Koneksi dan enkripsi
+        Firewall umumnya memiliki kemampuan untuk menjalankan enksipsi dalam autentikasi identitas user, integritas dari satu session, dan melapisi transfer data dari intipan pihak lain. enkripsi yang di makasud termasuk DES, tripple DES,SSl,IPSEC,SHA,MD5,BlowFish,IDEA dan sebagainya.
+\end{itemize}
+
+secara konseptual,terdapat dua macam firewall yaitu:
+\begin{itemize}
+  \item Network Level
+        Firewall network level mendasarkan keputusan mereka pada alamat sumber,alamat tujuan dan prot yang terdapat dalam setiap paket IP. Network level firewall sangat cepat dan sangat transparan bagi pemakai. Application level firewall biasanya adalah host yang berjalan sebagai proxy server, yang tidak mengijinkan lalu lintas antara jaringan, dan melakukan logging dan auditing lalu lintas yang melaluinya
+  \item Application level
+        Application level firewall menyediakan laporan audit yang lebih rinci dan cenderung lebih memaksakan model keamanan yang lebih konservatif daripada network level firewall. Firewall ini bisa di katakan sebagai jembatan. Application- Proxy firewall biasanya berupa program khusus, misalnya squid
+\end{itemize}
+
+Konfigurasi Firewall[TCP Wrapper]
+pada sistem operasi pada umumnya mempunyai program yang berjalan pada sistem operasi tersebut. pada sistem operasi linux,di kenal istilah service untuk mengantikan nama aplikasi secara global. Ada beberapa service yang di manage di linux:
+\begin{itemize}
+  \item System V scripts
+        merupakan metode yang paling umum digunakan untuk menaging service, biasanya membutuhkan file konfigurasi. service distart dengan scrpit di/etc/init.d/. misalnya untuk network: /etc/init.d/network restart atau service network restart
+  \item xinetd
+        hanya beberapa service yang ada pada xinetd, service ini tidak memerlukan start/stop terhadap service. dan file konfigurasi yang biasa di pakai adalah:
+        /etc/xinetd.conf -> Top level configuration file
+        /etc/xinetd.d/service -> service specifition configuration
+\end{itemize}
+
+Network Scanning dan Probing
+
+Dasar teori
+ Server tugasnya adalah melayani client dengan menyediakan service yang di butuhkan. Server menyadiakan service dengan bermacam-macam kemampuan, baik untuk lokal maupun remote. server listening pada suatu port dan menunggu incomming connection ke port. koneksi bisa berupa lokal maupun remote.
+    port sebernarnya suatu alamat pada stack jaringan kernel, sebagai cara di mana transport layer mengola koneksi dan melakukan pertukaran data antar komputer. port yang terbuka mempunyai resiko terkait dengan exploit. perlu dikelola port mana yang perlu di buka ini terbuka.
+    port Scanner merupakan program yang didesain untuk menemukan layanan (service) apa saja dijalankan pada host jaringan. untuk mendapatkan akses ke host,cracker harus mengetahui titik-titik kelemahan yang ada. sebagai contoh, apabila cracker sudah mengetahui bahwa host menjalankan proses ftp server untuk mendapatkan akses. dari bagian ini kita dapat mengambil kesimpulan bahwa layanan yang tidak benar-benar diperlukan sebaiknya dihilangkan untuk memperkecil resiko keamanan yang memungkin terjadi.
+
+ Type Scanning
+
+ \begin{itemize}
+   \item Connect scan (-sT)
+         Jenis scan ini konek ke port sasaran dan menyelesaikan three-way handshake (SYN,SYN/ACK). Scan jenis mudah terdeteksi oleh sistem sasaran.
+   \item -sS (TCP SYN scan)
+          Paling populer dan merupakan scan default nmap. SYN scan juga sukar terdeteksi, karena tidak menggunakan 3 way handshake secara lengkap, yang di sebut sebagai teknik half open scanning. SYN scan juga efektif karena dapat membedakan 3 state port, yaitu open, filterd ataupun close. teknik ini di kenal sebagai half-openning scanning karena suatu koneksi TCP tidak sampai terbentuk. sebaliknya suatu paket SYN di kirimkan ke port sasaran. Bila SYN/ACK diterima dari port sasaran, kita dapat mengambil kesimpulan bahwa port itu berbeda dalam suatu LISTENING. Suatu RST/ACT akan dikirim oleh mesin yang melakukan scanning sehingga koneksi penuh tidak akan terbentuk. Teknik ini bersifat siluman di bandingkan TCP connect penuh, dan tidak aka tercatat pada log sistem sasaran.
+   \item TCP FIN scan (-sF)
+         Teknik ini mengirim suatu paket FIN ke port sasaran. berdasarkan RFC 793, sistem sasaran akan mengirim balik suatu RST untuk setiap port yang tertutup. Teknik ini hanya dapat dipakai pada stack TCP/IP berbabasis UNIX.
+   \item TCP Xmas Tree Scam(-sX)
+         Teknik ini mengirimkan suatu paket FIN,URG, dan PUSH ke port sasaran. Berdasarkan RFC 793, sistem sasaran akan mengembalikan suatu RST untuk semua port yang tertutup.
+   \item TCP Null scan (-sN)
+         Teknik ini membuat off semua flag. Berdasarkan RFC 793, Sistem sasaran akan mengirim balik suatu RST untuk semua port yang tertutup.
+   \item TCP ACK scan(-sA)
+         Teknik ini di gunakan untuk memetakan set aturan firewall. Dapat membantu menentukan apakah firewall itu merupakan suatu simple packet filter yang membolehkan hanya koneksi-koneksi tertentu (koneksi dengan bit set ACK) atau suatu firewall yang menjalankan advance packet filtering.
+   \item TCP windows scan
+         Teknik ini dapat mendeteksi port-port terbuka maupun terfilter/tidak terfilter pada sistem-sistem tertentu (sebagai contoh, AIX dan freeBSD) sehubungkan dengan anomali dari ukuran windows TCP yang di laporkan.
+   \item TCP RPC scan
+         teknik ini spesifik hanya pada system UNIX dan digunakan untuk mendeteksi dan mengindentifikasi port RPC (Remote Procedure Call) dan program serta normor versi yang berhubungan dengannya.
+   \item UDP scan (-sU)
+         Teknik ini mengirimkan suatu paket UDP ke port sasaran. Bila port sasaran memberikan respon berupa pesan (ICMP port uncreachable) artinya port ini tertutup. sebaliknya bila tidak menerima pesan di atas, kita dapat menyimpulkan bahwa port itu terbuka. karena UDP di kenal sebagai connectionless protocol, akurasi teknik ini sangat bergantung pada banyak hal sehubungan dengan penggunaan jaringan dan system resource. sebagai tambahan, UDP scanning merupakan proses yang amat lambat apabila anda mencoba men-scan suatu perangkat yang menjalankan packet filtering berbebban tinggi.
+ \end{itemize}
+
+Telnet dan SSH
+\begin{itemize}
+  \item Telnet
+        Telnet(telecommunications network protocol) bekerja pada port 23
+        Telnet adalah protokol client-server yang memungkinkan adanya akses remote login komputer tujuan dalam sebuah jaringan. Telnet juga dapat diartikan sebagai virtual/emulasi terminal yang menggunakan protokl thelet untuk dapat mengakses komputer tujuan secara remote. Telnet di gunakan untuk login ke komputer lain di internet dan mengakses berbagai macam pelayanan umum, termasuk katalog perpustakan dan berbagai macam database.
+  \item SSH
+        Secure Shell(SSH) suatu protokol yang memfasilitas sistem komunikasi yang aman di antara dua sistem yang menggunakan arsitektur client/server, serta memungkinkan seorang user untuk login ke server secara remote. berbeda dengan telnet dan ftp yang menggunakan plain, text, SSH mengenkripsi data selama proses komunikasi sehingga menyulitkan penyusup/intruder yang mencoba mendapatkan password yang tidak dienkripsi. Fungsi utama aplikasi ini yaitu untuk mengakses mesin secara remote. bentuk akses remote yang bisa di peroleh adalah akses pada mode teks maupun mode grafis/x apabila konfigurasi mengijinkan.
+\end{itemize}
