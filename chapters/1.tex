@@ -402,6 +402,13 @@ Dasar teori
          teknik ini spesifik hanya pada system UNIX dan digunakan untuk mendeteksi dan mengindentifikasi port RPC (Remote Procedure Call) dan program serta normor versi yang berhubungan dengannya.
    \item UDP scan (-sU)
          Teknik ini mengirimkan suatu paket UDP ke port sasaran. Bila port sasaran memberikan respon berupa pesan (ICMP port uncreachable) artinya port ini tertutup. sebaliknya bila tidak menerima pesan di atas, kita dapat menyimpulkan bahwa port itu terbuka. karena UDP di kenal sebagai connectionless protocol, akurasi teknik ini sangat bergantung pada banyak hal sehubungan dengan penggunaan jaringan dan system resource. sebagai tambahan, UDP scanning merupakan proses yang amat lambat apabila anda mencoba men-scan suatu perangkat yang menjalankan packet filtering berbebban tinggi.
- \end{itemize} 
- 
- 
+ \end{itemize}
+
+Telnet dan SSH
+\begin{itemize}
+  \item Telnet
+        Telnet(telecommunications network protocol) bekerja pada port 23
+        Telnet adalah protokol client-server yang memungkinkan adanya akses remote login komputer tujuan dalam sebuah jaringan. Telnet juga dapat diartikan sebagai virtual/emulasi terminal yang menggunakan protokl thelet untuk dapat mengakses komputer tujuan secara remote. Telnet di gunakan untuk login ke komputer lain di internet dan mengakses berbagai macam pelayanan umum, termasuk katalog perpustakan dan berbagai macam database.
+  \item SSH
+        Secure Shell(SSH) suatu protokol yang memfasilitas sistem komunikasi yang aman di antara dua sistem yang menggunakan arsitektur client/server, serta memungkinkan seorang user untuk login ke server secara remote. berbeda dengan telnet dan ftp yang menggunakan plain, text, SSH mengenkripsi data selama proses komunikasi sehingga menyulitkan penyusup/intruder yang mencoba mendapatkan password yang tidak dienkripsi. Fungsi utama aplikasi ini yaitu untuk mengakses mesin secara remote. bentuk akses remote yang bisa di peroleh adalah akses pada mode teks maupun mode grafis/x apabila konfigurasi mengijinkan.
+\end{itemize}
